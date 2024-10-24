@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Web 1 Pemrograman</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #007bff;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .social-login {
+            margin-top: 20px;
+        }
+        .social-button {
+            display: inline-block;
+            width: 45%;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+        }
+        .facebook {
+            background-color: #3b5998;
+        }
+        .google {
+            background-color: #3b5998;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <img src="foto-foto/logo.png" alt="Logo" class="logo" width="100"> <!-- Ganti dengan path logo -->
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <button type="submit">Masuk</button>
+        <p class="error" id="error-message" style="display:none;"></p>
+    </form>
+    <div class="social-login">
+        <p>Atau masuk dengan:</p>
+        <a href="#" class="social-button facebook">Facebook</a>
+        <a href="#" class="social-button google">Google</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah pengiriman form default
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Validasi sederhana (ganti dengan logika yang sesuai)
+        if (username === 'njwchsna' && password === 'naca123') {
+            window.location.href = 'index.html'; // Redirect ke halaman index
+        } else {
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = 'Username atau password salah!';
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
